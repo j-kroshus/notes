@@ -1,0 +1,534 @@
+/* **************** TEMPLATE ***************** */
+/* ====== Page Head, Body, and Foot ====== */
+body{/*_text-align:center;*/}/* IE5.5 */
+.body{overflow:hidden; _overflow:visible; _zoom:1;}
+.page{margin: 0 auto; width: 950px;/*_text-align:left;*/} /* wraps other template elems to set width */ /* text-align IE5.5 */
+/* "old school" and "liquid" extend page to allow for different page widths */
+.oldSchool{width:750px;}
+.gs960{width:960px;}
+.liquid{extends:.page; width: auto;margin:0;}
+/* ====== Columns ====== */
+.main{overflow: hidden;_overflow:visible;_zoom:1;}
+.leftCol{float:left; width:250px;_margin-right:-3px;}
+.rightCol{float:right; width: 300px;_margin-left:-3px;}
+/* extend columns to allow for common column widths */
+.gMail{width:160px;}
+.gCal{width:180px;}
+.yahoo{width:240px;}
+.myYahoo{width:300px;}
+
+/*
+Copyright (c) 2009, Nicole Sullivan. All rights reserved.
+Code licensed under the BSD License:
+version: 0.2
+*/
+/* **************** BLOCK STRUCTURES ***************** */
+/* mod */
+.mod{margin:10px;}
+.mod .inner{/*background: url(skin/transparent.png) repeat left top;*/}
+.hd,.bd,.ft{overflow:hidden;_overflow:visible; _zoom:1;}
+.inner{position:relative;}
+b{display:block;background-repeat:no-repeat;font-size:1%;position:relative;z-index:10;}
+.tl, .tr, .bl, .br{height:10px; width:10px;float:left;}
+.tl{background-position: left top;}
+.tr{background-position: right top;}
+.bl{background-position: left bottom;} 
+.br{background-position: right bottom;}
+.br,.tr{float:right;}
+.tr, .tl{overflow:hidden;margin-bottom:-32000px;}/* margin bottom needs to be < -9px */
+.bl,.br{margin-top:-10px;}
+.top{background-position:center top;}
+.bottom{background-position:center bottom;_zoom:1;}/* this zoom required for IE5.5 only*/
+/* complex */
+.complex{overflow:hidden;*position:relative;*zoom:1;}/* position/zoom required for IE7, 6, 5.5 */
+.complex .tl, .complex .tr{height:32000px; margin-bottom:-32000px;width:10px;}
+.complex .bl, .complex .br{/*margin-top:0;*/}
+.complex .top{height:5px;}
+.complex .bottom{height:5px;/*margin-top:-10px;*/}
+/* pop  */
+.pop{overflow:visible;margin: 10px 20px 20px 10px; background-position:left top;}
+.pop .inner{right:-10px; bottom:-10px; background-position:right bottom;padding:0 10px 10px 0;}
+.pop .tl, .pop .br{display:none;}
+.pop .bl{bottom:-10px;}
+.pop .tr{right:-10px;}
+
+
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 3.0.0pr2
+*/
+/* reset */
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
+/* fonts */
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+/* **************** GRIDS ***************** */
+.line:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.lastUnit:after{content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";visibility:hidden; clear:both;height:0 !important;display:block;line-height:0;}
+.line{*zoom:1;}
+.unit{float:left;}
+.size1of1{float:none;}
+.size1of2{width:50%;}
+.size1of3{width:33.33333%;}
+.size2of3{width:66.66666%;}
+.size1of4{width:25%;}
+.size3of4{width:75%;}
+.size1of5{width:20%;}
+.size2of5{width:40%;}
+.size3of5{width:60%;}
+.size4of5{width:80%;}
+.lastUnit {display: table-cell; *display:block;*zoom:1;float:none;_position:relative; _left:-3px; _margin-right: -3px;width:auto;}
+
+
+body{font-family:"Myriad Pro","Segoe UI",Helvetica, Arial, sans-serif;}
+/* **************** CONTENT OBJECTS ***************** */
+/* ====== Default spacing ====== */
+h1, h2, h3, h4, h5, h6, ul, ol,dl, p,blockquote {padding:10px;}
+h1, h2, h3, h4, h5, h6,img{padding-bottom:0px;}
+pre{margin: 10px;}
+table h1,table h2,table h3, table h4, table h5, table h6, table p, table ul, table ol, table dl{padding:0;}
+/* ====== Elements ====== */
+img{display:block;}
+em{font-style: italic;}
+strong{font-weight:bold;}
+hr{border: 5px solid #e2e2e2; border-width: 0 0 5px 0; margin: 20px 10px 10px 10px;}
+code{color:#0B8C8F;}
+/* ====== Headings ====== */
+/* .h1-.h6 classes should be used to maintain the semantically appropriate heading levels - NOT for use on non-headings */
+h1, .h1{font-size:196%;  font-weight:normal; font-style: normal; color:#AE0345;}
+h2, .h2{font-size:167%; font-weight:normal; font-style: normal; color:#AE0345;}
+h3, .h3{font-size:146.5%; font-weight:normal; font-style: normal; color:#DF2B72;}
+h4, .h4{font-size:123.1%; font-weight:normal; font-style: normal; color: #333;}
+h5, .h5{font-size:108%; font-weight:bold; font-style: normal; color:#AE0345;}
+h6, .h6{font-size:108%; font-weight:normal;  font-style: italic; color:#333;}
+/* if additional headings are needed they should be created via additional classes, never via location dependant styling */
+.category{font-size:108%; font-weight:normal; font-style: normal; text-transform:uppercase; color: #333;}
+.category a{color: #333;}
+.important a{font-weight:bold;}
+/* links */
+a { color: #036; font-weight:bold;text-decoration: none }
+a:focus, a:hover { text-decoration: underline }
+a:visited { color:#005a9c; }
+/* ====== Lists ======*/
+/* numbered list */
+ol.simpleList li{list-style-type: decimal; margin-left:40px;}
+/* standard list */
+ul.simpleList li{list-style-type:disc; margin-left:40px;}
+/* ====== Tables ====== */
+.data{padding: 20px; position:relative; zoom:1;vertical-align: top;border-right:solid 1px transparent;/* border fixes a FF2 bug which causes the data table to overlay its borders*/}
+.data table {width:100%;border:1px solid #AE0345;}
+th, td{vertical-align:top;border:1px solid #AE0345;}
+.txtC, .data .txtC td, .data .txtC th{text-align:center;}
+.txtL, .data .txtL td, .data .txtL th{text-align:left;}
+.txtR, .data .txtR td, .data .txtR th{text-align:right;}
+.txtT, .data .txtT td, .data .txtT th{vertical-align:top;}
+.txtB, .data .txtB td, .data .txtB th{vertical-align:bottom;}
+.txtM, .data .txtM td, .data .txtM th{vertical-align:middle;}
+.data th,.data td{padding:3px 20px}
+.data thead tr{background-color: #fff0f8;}
+.data th{color: #000; font-weight:bold}
+/* specification table - extends data table */
+.spec{padding:10px;}
+.spec table{border-top: 1px solid #e2e2e2; border-bottom-color:#fff; border-left:none; border-right:none;}
+.spec th, .spec td{border:1px solid #e2e2e2; border-width: 1px 0; padding-left:0;}
+.spec .odd, .spec .even{background-color: #fff;}
+/* ====== blockquote ====== */
+cite{display:block; text-align:right; padding-top: 10px;}
+/* ====== callout ====== */
+.callout{font-size:189%;color:#999999; font-style:italic;}
+.callout cite{display:block; text-align:right;padding-top: 30px; font-size:69.25%;}
+.callout span.quot{font-size: 500%; vertical-align: sub; color:#e2e2e2; line-height:25px; font-weight:bold;}
+.callout span.quotLast{vertical-align:middle;}
+/* ====== image treatments (get more from jason santa maria) ====== */
+.caption{font-size:13px; color:#666666; font-style:italic;padding-top:0;}
+/* will need to either 
+1. find a way to capture the width of the caption in the width of the image or flash
+2. Set some default widths, mby use flickr widths?
+*/
+/* ====== media ====== */
+.media{overflow:hidden; overflow:visible; zoom:1;margin:10px;}
+.media .img{float:left;margin-right: 10px;}
+.media .img img{display:block;}
+.media .imgExt{float:right; margin-left: 10px;}
+/* ====== special formatting classes ====== */
+.detail{color: #777; font-size:11px;display:block;}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Template Documentation</title>
+<link rel="stylesheet" type="text/css" media="all"  href="css/libraries.css" />
+<link rel="stylesheet" type="text/css" media="all"  href="css/template.css" />
+<!--<link rel="stylesheet" type="text/css" media="all"  href="css/template_debug.css" />-->
+<link rel="stylesheet" type="text/css" media="all" href="css/grids.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/content.css" />
+<link rel="stylesheet" type="text/css" media="all" href="../css/mod.css" />
+<link rel="stylesheet" type="text/css" media="all" href="../css/mod_skin.css" />
+</head>
+<body>
+<h1>Template</h1>
+<div class="page">
+	<div class="head">
+		<h2>Head</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="body">
+		<div class="leftCol">
+			<h2>Left Column</h2>
+			<p>Left column is 250px by default. It can be extended by several classes to allow for additional layouts.</p>
+			<ul>
+				<li>.gMail = 160px</li>
+				<li>.gCal = 180px</li>
+				<li>.yahoo = 240px</li>
+				<li>.myYahoo = 300px</li>
+			</ul>
+		</div>
+		<div class="rightCol">
+			<h2>Right Column</h2>
+			<p>The right column is by default 300px wide.  It can be extended via all the same classes that are available to right column.</p>
+			<ul>
+				<li>.gMail = 160px</li>
+				<li>.gCal = 180px</li>
+				<li>.yahoo = 240px</li>
+				<li>.myYahoo = 300px</li>
+			</ul>
+		</div>
+		<div class="main">
+			<h2>Main Content</h2>
+			<p>Main Content is fully liquid. It takes all the remaining space on the line after the widths of "leftCol" and "rightCol" are taken into account. Alternatively, grids can be used to break up the main content area for fully fluid layouts.</p>
+		</div>
+	</div>
+	<div class="foot">
+		<h2>Foot</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>		
+	</div>	
+</div>
+</body>
+</html>
+
+
+
+table example
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>A Fancy Table</h1>
+
+<table id="customers">
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Königlich Essen</td>
+    <td>Philip Cramer</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+    <td>Simon Crowther</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Paris spécialités</td>
+    <td>Marie Bertrand</td>
+    <td>France</td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Grids Documentation</title>
+<link rel="stylesheet" type="text/css" media="all"  href="css/libraries.css" />
+<link rel="stylesheet" type="text/css" media="all"  href="css/template.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/grids.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/grids_debug.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/content.css" />
+<style type="text/css">
+dt{font-weight:bold;}
+pre strong, dt strong{color: #0B8C8F;}
+pre{padding: 20px;background-color: #FCF8BC;overflow:auto;width:auto;}
+</style>
+</head>
+<body>
+<h1>Lines & Grids</h1>
+<p class="intro">Grids are used to break any space into fractions, they can be nested. A unit can contain another line or it can contain other objects directly.  The sum of the fractional sizes of all children of one line should be equal to one. Grids control width, content controls height.</p>
+<h2>Base Classes</h2>
+<div class="data">
+<table>
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr class="odd">
+		<th scope="row"><code>line</code></th>
+		<td>Groups units on one horizontal line.  Note: for mobile layout units may be stacked to avoid horizontal scrolling.</td>
+	</tr>
+	<tr class="even">
+		<th scope="row"><code>unit</code></th>
+		<td>Base class which divides a line into sections (columns).</td>
+	</tr>
+	<tr class="odd">
+		<th scope="row"><code>size<strong>X</strong>of<strong>Y</strong></code></th>
+		<td>Extends <code>unit</code>. Indicates the fractional width of the unit, for example <code>size3of4</code> would take up three quarters, or 75%, of the horizontal space. The following fractions are supported: 1
+
+1/2
+
+1/3
+
+2/3
+
+1/4
+
+3/4
+
+1/5
+
+2/5
+
+3/5
+
+4/5</td>
+	</tr>
+	<tr class="even">
+		<th scope="row"><code>lastUnit</code></th>
+		<td>Extends <code>unit</code>. Applied to the last child of every line.</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+<h2>Halves</h2>
+<div class="line">
+	<div class="unit size1of2">
+		<h3>1/2</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="unit size1of2 lastUnit">
+		<h3>1/2</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+<pre>&lt;div class=&quot;<strong>line</strong>&quot;&gt;<br />
+	&lt;div class=&quot;<strong>unit size1of2</strong>&quot;&gt;<br />
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit ... &lt;/p&gt;
+	&lt;/div&gt;<br />
+	&lt;div class=&quot;unit size1of2 <strong>lastUnit</strong>&quot;&gt;<br />
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit ... &lt;/p&gt;
+	&lt;/div&gt;<br />
+&lt;/div&gt;</pre>
+<h2>Thirds</h2>
+<div class="line">
+	<div class="unit size1of3">
+		<h3>1/3</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="unit size1of3">
+		<h3>1/3</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="unit size1of3 lastUnit">
+		<h3>1/3</h3>		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+<pre>&lt;div class=&quot;<strong>line</strong>&quot;&gt;<br />	&lt;div class=&quot;<strong>unit size1of3</strong>&quot;&gt;<br />		&lt;p&gt;&lt;strong&gt;unit size1of3&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />	&lt;div class=&quot;unit size1of3&quot;&gt;<br />		&lt;p&gt;&lt;strong&gt;unit size1of3&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />	&lt;div class=&quot;unit size1of3 <strong>lastUnit</strong>&quot;&gt;<br />		&lt;p&gt;&lt;strong&gt;unit size1of3&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />&lt;/div&gt;</pre>
+<div class="line">
+	<div class="unit size1of3">
+		<h3>1/3</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="unit size2of3 lastUnit">
+		<h3>2/3</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+<pre>&lt;div class=&quot;line&quot;&gt;<br />	&lt;div class=&quot;unit size1of3&quot;&gt;<br />		&lt;p&gt;&lt;strong&gt;unit size1of3&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />	&lt;div class=&quot;unit <strong>size2of3</strong> lastUnit&quot;&gt;<br />		&lt;p&gt;&lt;strong&gt;unit size1of3&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />&lt;/div&gt;</pre>
+<h2>Quarters</h2>
+<div class="line">
+	<div class="unit size1of4">
+		<h3>1/4</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="unit size1of4">
+		<h3>1/4</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="unit size1of2 lastUnit">
+		<h3>1/2</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+<pre>&lt;div class=&quot;line&quot;&gt;<br />	&lt;div class=&quot;unit <strong>size1of4</strong>&quot;&gt;<br />		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />	&lt;div class=&quot;unit size1of4&quot;&gt;<br />		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />	&lt;div class=&quot;unit size1of2 lastUnit&quot;&gt;<br />		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />&lt;/div&gt;</pre>
+<div class="line">
+	<div class="unit size3of4">
+		<h3>3/4</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="unit size1of4 lastUnit">
+		<h3>1/4</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+<pre>&lt;div class=&quot;line&quot;&gt;<br />	&lt;div class=&quot;unit <strong>size3of4</strong>&quot;&gt;<br />		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;<br />	&lt;/div&gt;<br />	&lt;div class=&quot;unit size1of4 lastUnit&quot;&gt;<br />		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />&lt;/div&gt;</pre>
+
+<h2>Fifths</h2>
+<div class="line">
+	<div class="unit size4of5">
+		<h3>4/5</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="unit size1of5 lastUnit">
+		<h3>1/5</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+<pre>&lt;div class=&quot;line&quot;&gt;<br />	&lt;div class=&quot;unit <strong>size4of5</strong>&quot;&gt;<br />		&lt;h3&gt;size4of5&lt;/h3&gt;<br />		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />	&lt;div class=&quot;unit <strong>size1of5</strong> lastUnit&quot;&gt;<br />		&lt;h3&gt;size1of5&lt;/h3&gt;<br />		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;<br />	&lt;/div&gt;<br />&lt;/div&gt;</pre>
+
+<div class="line">
+	<div class="unit size2of5">
+		<h3>2/5</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="unit size3of5 lastUnit">
+		<h3>3/5</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+
+<h2>Complicated Nesting - the AG test</h2>
+
+<p>Many years ago Arnaud Gueras, an excellent developer I worked with, created this litmus test of a great grid system.  It should be able to nest any combination of the units and lines, and so it should be able to create the complicated layout below.  His test reminded me of the golden mean, so I still use it today.  </p>
+
+<div class="line">
+	<div class="unit size1of5">
+		<h3>1/5</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>
+	<div class="unit size3of5">
+		<!-- line -->
+		<div class="line">
+			<div class="unit size1of2">
+				<h3>1/2</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+			<div class="unit size1of2 lastUnit">
+				<h3>1/2</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+		<!-- /line -->
+		<div class="line">
+			<div class="unit size1of3">
+				<h3>1/3</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+			<div class="unit size2of3 lastUnit">
+				<!-- line -->
+				<div class="line">
+					<div class="unit size1of2">
+						<h3>1/2</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+					<div class="unit size1of2 lastUnit">
+						<h3>1/2</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+				<!-- /line -->
+				<div class="line">
+					<div class="unit size1of1">
+						<h3>1</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="unit size1of5 lastUnit">
+		<h3>1/5</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>
+</div>
+</body>
+</html>
