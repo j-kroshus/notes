@@ -1,0 +1,212 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "nav main";
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "item1"
+    "item1"
+    "item2"
+    "item3"
+    "item4"
+    "item5"
+    "item6"
+    "item7"
+    "item8"
+    "item9"
+    "item10"
+    "item11";
+  grid-area: nav;
+}
+
+.item2 { grid-area: item2; }
+
+.item3 { grid-area: item3; }
+
+.item4 { grid-area: item4; }
+
+.item5 { grid-area: item5; }
+
+.item6 { grid-area: item6; }
+
+.item7 { grid-area: item7; }
+
+.item8 { grid-area: item8; }
+
+.item9 { grid-area: item9; }
+
+.item10 { grid-area: item10; }
+
+.item11 { grid-area: item11; }
+
+.item1 {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". icon ."
+    ". . .";
+  grid-area: item1;
+}
+
+.icon { grid-area: icon; }
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "example example example example example example example example example example"
+    "list list list list list list list list list list"
+    "table table table table table table table table table table";
+  grid-area: main;
+}
+
+.example {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "example-header example-header example-header example-header example-header example-header example-header example-header example-header example-header"
+    "example-text example-text example-text example-text example-text example-text example-text example-text example-text example-text"
+    "example-code example-code example-code example-code example-code example-code example-code example-code example-code example-code"
+    "example-code example-code example-code example-code example-code example-code example-code example-code example-code example-code"
+    "example-code example-code example-code example-code example-code example-code example-code example-code example-code example-code";
+  grid-area: example;
+}
+
+.example-header { grid-area: example-header; }
+
+.example-text { grid-area: example-text; }
+
+.example-code { grid-area: example-code; }
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "list-header list-header list-header list-header list-header list-header list-header list-header list-header list-header"
+    "list-text list-text list-text list-text list-text list-text list-text list-text list-text list-text"
+    "lists lists lists lists lists lists lists lists lists lists"
+    "lists lists lists lists lists lists lists lists lists lists"
+    "lists lists lists lists lists lists lists lists lists lists";
+  grid-area: list;
+}
+
+.list-header { grid-area: list-header; }
+
+.list-text { grid-area: list-text; }
+
+.lists { grid-area: lists; }
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 05px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "table-header table-header table-header table-header table-header table-header table-header table-header table-header table-header"
+    "table-text table-text table-text table-text table-text table-text table-text table-text table-text table-text"
+    "tables tables tables tables tables tables tables tables tables tables"
+    "tables tables tables tables tables tables tables tables tables tables"
+    "tables tables tables tables tables tables tables tables tables tables";
+  grid-area: table;
+}
+
+.table-header { grid-area: table-header; }
+
+.table-text { grid-area: table-text; }
+
+.tables { grid-area: tables; }
+
+
+html, body , .container {
+  height: 100%;
+  margin: 0;
+}
+  
+/* For presentation only, no need to copy the code below */
+
+.container * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.container *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+        <div class="item5"></div>
+        <div class="item6"></div>
+        <div class="item7"></div>
+        <div class="item8"></div>
+        <div class="item9"></div>
+        <div class="item10"></div>
+        <div class="item11"></div>
+        <div class="item1">
+          <div class="icon"></div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="example">
+          <div class="example-header"></div>
+          <div class="example-text"></div>
+          <div class="example-code"></div>
+        </div>
+        <div class="list">
+          <div class="list-header"></div>
+          <div class="list-text"></div>
+          <div class="lists"></div>
+        </div>
+        <div class="table">
+          <div class="table-header"></div>
+          <div class="table-text"></div>
+          <div class="tables"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+http://www.responsivegridsystem.com/calculator/
