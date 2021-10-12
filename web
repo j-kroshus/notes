@@ -1,0 +1,51 @@
+HTML — structures website content
+CSS — applies styling to websites
+JavaScript — adds interactivity to websites
+SQL — allows your web application to store and retrieve data
+
+The font-family property defines the typeface of an element.
+font-size controls the size of text displayed.
+font-weight defines how thin or thick text is displayed.
+The text-align property places text in the left, right, or center of its parent container.
+Text can have two different color attributes: color and background-color. color defines the color of the text, while background-color defines the color behind the text.
+CSS can make an element transparent with the opacity property.
+CSS can also set the background of an element to an image with the background-image property.
+The !important flag will override any style, however it should almost never be used, as it is extremely difficult to override.
+
+/* menu items use flex layout so that visibility:collapse will work */
+nav > ul > li {
+display: flex;
+flex-flow: column;
+}
+
+/* dynamically collapse submenus when not targetted */
+nav > ul > li:not(:target):not(:hover) > ul {
+visibility: collapse;
+}
+
+
+<li id="nav-about"><a href="#nav-about">About</a>
+…
+<li id="nav-projects"><a href="#nav-projects">Projects</a>
+<ul>
+<li><a href="…">Art</a>
+<li><a href="…">Architecture</a>
+<li><a href="…">Music</a>
+</ul>
+<li id="nav-interact"><a href="#nav-interact">Interact</a>
+
+
+Learn more
+Property reference
+align-content
+align-items
+align-self
+flex
+flex-basis
+flex-direction
+flex-flow
+flex-grow
+flex-shrink
+flex-wrap
+justify-content
+order
