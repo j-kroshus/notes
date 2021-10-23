@@ -17,12 +17,10 @@ End Sub
 Private Sub Worksheet_BeforeDelete() 
 End Sub 
 
-Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, _ 
-                                        ByRef Cancel As Boolean) 
+Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, ByRef Cancel As Boolean) 
 End Sub 
 
-Private Sub Worksheet_BeforeRightClick(ByVal Target As Range, _ 
-                                       ByRef Cancel As Boolean) 
+Private Sub Worksheet_BeforeRightClick(ByVal Target As Range, ByRef Cancel As Boolean) 
 End Sub 
 
 Private Sub Worksheet_Calculate() 
@@ -66,7 +64,6 @@ Private Sub Worksheet_PivotTableBeforeDiscardChanges( _
 End Sub 
 
 Private Sub Worksheet_PivotTableChangeSync(ByVal Target As PivotTable) 
-
 End Sub 
 
 Private Sub Worksheet_PivotTableUpdate(ByVal Target As PivotTable) 
@@ -85,8 +82,7 @@ worksheet elements as in a 2 dimension array (matrix), the first dimension repre
 second the column.
 
 Note: If you use Range or Cells without referring the worksheet:
-a ) IF code is in a WorkSheet Module -» you’re accessing ranges and cells where the current macro
-code is running (ThisSheet).
+a ) IF code is in a WorkSheet Module -» you’re accessing ranges and cells where the current macro code is running (ThisSheet).
 b) IF code is in an Independent Module -» you’re accessing ranges and cells belonging to
 
 ActiveSheet
@@ -98,8 +94,7 @@ You can do the same using the Range object
 Range(“A3”) = 7 – cell “A3” receives the value 7
 
 Use the Range object to access a group of cells
-Range(“A1:C3”) = 7 or Range(“A1”,”C3”) = 7 or Range(cells(1,1),cells(3,3)) = 7 – all the cells in
-the range “A1:C3” receive the value 7
+Range(“A1:C3”) = 7 or Range(“A1”,”C3”) = 7 or Range(cells(1,1),cells(3,3)) = 7 – all the cells in the range “A1:C3” receive the value 7
 Range(“A1:C3”).Clear – clear cells in “A1:C3” range, including formats
 Range(“A1:C3”).ClearContents – clear values in “A1:C3” range, formats will remain
 
@@ -111,12 +106,10 @@ You can refer to multiple areas (groups of cells)
 Range(“A1:C3,A5:C7”) = 7 – range “A1:C3” and range “A5:C7” will receive the value 7
 
 You can even use the Range object to access entire rows or columns
-Range(“C:C”).Insert – this will insert a new column before column “C” (3)
-Or you can do the same using the Columns object
-Columns(3).Insert
+Range(“C:C”).Insert – this will insert a new column before column “C” (3) 
+Or you can do the same using the Columns object Columns(3).Insert
 Range(“3:3”).Delete – row 3 will be deleted, rows 4 and down will shift up
-Or you can do the same using the Rows object
-Rows(3).Delete
+Or you can do the same using the Rows object Rows(3).Delete
 
 Accessing multiple rows or columns using the Range object
 Range(“1:1,3:3,5:5”).Interior.Colorindex=5 – background of rows 1,3 and 5 will be set to blue
